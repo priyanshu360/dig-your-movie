@@ -85,7 +85,7 @@ func router(req *dns.Msg, route string) *dns.Msg {
 
 	answer, _ = dns.NewRR(fmt.Sprintf("movie.info. IN TXT \"%s\"", movie.Description))
 
-	resp.Insert([]dns.RR{answer})
+	resp.Answer = append(resp.Answer, answer)
 	return resp
 }
 
