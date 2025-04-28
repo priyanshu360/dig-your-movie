@@ -1,11 +1,41 @@
-# dig-your-movie
+# Dig Your Movie
 
-## issues
+A simple DNS server that returns movie descriptions based on OMDB data.
 
-### todo : movie description should pe send as answer
+## Project Structure
 
-### todo : write test
+- `cmd/server`: The DNS server entry point.
+- `cmd/client`: A CLI tool to query the DNS server.
+- `internal/config`: Configuration management.
+- `internal/dns`: DNS server implementation.
+- `internal/omdb`: OMDB API client.
 
-### todo : write dockefile and makefile
+## Getting Started
 
-### todo : refactor
+### Prerequisites
+
+- Go 1.20+
+- OMDB API Key (default provided for dev)
+
+### Running the Server
+
+```bash
+go run cmd/server/main.go
+```
+
+The server listens on port 8095 by default.
+
+### Running the Client
+
+```bash
+go run cmd/client/main.go "The Matrix"
+```
+
+## Docker
+
+To build and run with Docker:
+
+```bash
+docker build -t dig-your-movie .
+docker run -p 8095:8095 dig-your-movie
+```

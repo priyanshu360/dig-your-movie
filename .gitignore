@@ -1,0 +1,7 @@
+# Binaries
+server
+client
+dig-your-movie
+
+# Modules
+vendor/
